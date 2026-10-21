@@ -1,4 +1,4 @@
-package dev.java10x.Fridge.controller.repository;
+package dev.java10x.Fridge.repository;
 
 public class FoodRepository {
 }
