@@ -15,6 +15,8 @@ public class Food
     private LocalDate expirationDate;
     private Integer quantity;
 
+    public Food(){};
+
     public Food(Long id, String name, LocalDate expirationDate, Integer quantity) {
         this.id = id;
         this.name = name;
