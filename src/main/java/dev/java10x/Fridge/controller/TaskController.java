@@ -8,7 +8,7 @@ import java.util.List;
 
 
 @RestController
-@RequestMapping({"/task", "/teste"})
+@RequestMapping
 public class TaskController
 {
     private final TaskService taskService;
@@ -17,10 +17,17 @@ public class TaskController
         this.taskService = taskService;
     }
 
-    @GetMapping
+    @GetMapping({"/task"})
     public List<Task> getAll()
     {
         return taskService.getAll();
+    }
+
+
+    @GetMapping({"/teste", "/task/hello"})
+    public String teste()
+    {
+        return taskService.hello();
     }
 
     @PostMapping
@@ -31,10 +38,4 @@ public class TaskController
 
     @DeleteMapping
     public void delete(@PathVariable Long id) {taskService.delete(id);}
-
-    @GetMapping({"/", "/hello"})
-    public String teste()
-    {
-        return taskService.hello();
-    }
 }
