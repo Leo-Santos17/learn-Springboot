@@ -6,8 +6,9 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+
 @RestController
-@RequestMapping("/task")
+@RequestMapping({"/task", "/teste"})
 public class TaskController
 {
     private final TaskService taskService;
@@ -31,4 +32,9 @@ public class TaskController
     @DeleteMapping
     public void delete(@PathVariable Long id) {taskService.delete(id);}
 
+    @GetMapping({"/", "/hello"})
+    public String teste()
+    {
+        return taskService.hello();
+    }
 }

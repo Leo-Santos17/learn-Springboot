@@ -32,4 +32,10 @@ public class TaskService {
     {
         taskRepository.deleteById(id);
     }
+
+    // Teste
+    public String hello()
+    {
+        return "Hello world";
+    }
 }
